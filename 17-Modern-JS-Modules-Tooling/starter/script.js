@@ -34,7 +34,8 @@ const lastPost = getLastPost();
 const lastPost2 = await getLastPost();
 console.log(lastPost2); */
 
-const ShoppingCart2 = (function () {
+// Closures
+/* const ShoppingCart2 = (function () {
   const cart = [];
   const shippingCost = 10;
   const totalPrice = 647;
@@ -63,4 +64,31 @@ const ShoppingCart2 = (function () {
 })();
 
 ShoppingCart2.addToCart('apple', 4);
-console.log(ShoppingCart2.shippingCost);
+ShoppingCart2.addToCart('bread', 9);
+console.log(ShoppingCart2);
+console.log(ShoppingCart2.shippingCost); */
+
+
+import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+
+const state = {
+  cart: [
+    { product: 'bread', quantity: 5 },
+    { product: 'sardine', quantity: 3 }
+  ],
+  user: { loggedIn: true },
+};
+
+// Normal way of cloning a data
+const stateClone = Object.assign({}, state);
+console.log(stateClone);
+
+// Using Leaflet to clone
+const stateDeepClone = cloneDeep(state);
+console.log(stateDeepClone);
+
+
+// changing the data
+// state.user.loggedIn = false;
+// console.log(stateClone);
+// console.log(stateDeepClone);
