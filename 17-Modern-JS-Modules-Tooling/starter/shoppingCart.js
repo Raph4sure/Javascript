@@ -7,7 +7,8 @@ await fetch('https://jsonplaceholder.typicode.com/users');
 console.log('finished'); */
 
 const shippingCost = 10;
-const cart = [];
+export const cart = [];
+// const cart = [];
 
 export const addToCart = function (product, quantity) {
   cart.push({ product, quantity });

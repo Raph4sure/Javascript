@@ -7,7 +7,16 @@
 
 // console.log(price, qty);
 
+import add, { cart } from './shoppingCart.js';
+add('pizza', 2);
+add('bread', 5);
+add('apples', 4);
+
+console.log(cart);
+
 /* console.log('Importing module');
+
+
 
 import * as ShoppingCart from './shoppingCart.js'
 ShoppingCart.addToCart('pencil', 8); */
@@ -68,13 +77,13 @@ ShoppingCart2.addToCart('bread', 9);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost); */
 
-
-import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
 
 const state = {
   cart: [
     { product: 'bread', quantity: 5 },
-    { product: 'sardine', quantity: 3 }
+    { product: 'sardine', quantity: 3 },
   ],
   user: { loggedIn: true },
 };
@@ -87,8 +96,19 @@ console.log(stateClone);
 const stateDeepClone = cloneDeep(state);
 console.log(stateDeepClone);
 
-
 // changing the data
 // state.user.loggedIn = false;
 // console.log(stateClone);
 // console.log(stateDeepClone);
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+
+// import 'core-js/stable/array/find';
+import 'core-js/stable';
+
+
+// polifilling async functions
+import 'regenerator-runtime/runtime'

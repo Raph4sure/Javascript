@@ -1,15 +1,20 @@
 {
-  "name": "17-modern-js-modules-tooling",
-  "version": "1.0.0",
-  "description": "My_project",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Raph",
-  "license": "ISC",
-  "dependencies": {
-    "leaflet": "^1.9.4",
-    "lodash-es": "^4.17.21"
-  }
+    "name": "17-modern-js-modules-tooling",
+    "version": "1.0.0",
+    "description": "My_project",
+    "scripts": {
+        "start": "rm -rf .parcel-cache && parcel ./starter/index.html",
+        "build": "rm -rf .parcel-cache && parcel build ./starter/index.html"
+    },
+    "author": "Raph",
+    "license": "ISC",
+    "dependencies": {
+        "core-js": "^3.35.0",
+        "leaflet": "^1.9.4",
+        "lodash-es": "^4.17.21",
+        "regenerator-runtime": "^0.14.1"
+    },
+    "devDependencies": {
+        "parcel": "^2.11.0"
+    }
 }
